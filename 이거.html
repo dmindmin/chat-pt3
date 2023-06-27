@@ -8,7 +8,7 @@
 
   <script>
     window.addEventListener('DOMContentLoaded', () => {
-      fetch('https://raw.githubusercontent.com/dmindmin/chat-pt3/3b4c8857a6fc96b81bf0ce04dc2e42d798b40e8a/df_expense.csv')
+      fetch('df_expense.csv')
         .then(response => response.text())
         .then(csvData => {
           const table = document.getElementById('csv-table');
@@ -31,4 +31,5 @@
   </script>
 </body>
 </html>
+
 
