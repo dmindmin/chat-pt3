@@ -8,7 +8,7 @@
 
   <script>
     window.addEventListener('DOMContentLoaded', () => {
-      fetch('C:/Users/user/Downloads/df_expense (2).csv')
+      fetch('df_expense.csv')
         .then(response => response.text())
         .then(csvData => {
           const table = document.getElementById('csv-table');
@@ -27,6 +27,11 @@
         .catch(error => {
           console.error('CSV 파일을 불러오는 중 오류가 발생했습니다:', error);
         });
+    });
+  </script>
+</body>
+</html>
+
     });
   </script>
 </body>
