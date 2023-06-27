@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSV 파일 표시</title>
+</head>
+<body>
+  <table id="csv-table"></table>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      fetch('C:/Users/user/Downloads/df_expense (2).csv')
+        .then(response => response.text())
+        .then(csvData => {
+          const table = document.getElementById('csv-table');
+          const rows = csvData.split('\n');
+          rows.forEach(row => {
+            const rowData = row.split(',');
+            const tableRow = document.createElement('tr');
+            rowData.forEach(data => {
+              const tableData = document.createElement('td');
+              tableData.textContent = data;
+              tableRow.appendChild(tableData);
+            });
+            table.appendChild(tableRow);
+          });
+        })
+        .catch(error => {
+          console.error('CSV 파일을 불러오는 중 오류가 발생했습니다:', error);
+        });
+    });
+  </script>
+</body>
+</html>
